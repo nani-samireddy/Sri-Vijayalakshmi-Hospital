@@ -87,7 +87,7 @@ export default function Home() {
           <div className="flex items-start gap-10 justify-center">
             {
               doctors.map((doctor, index) => (
-                <div className=" w-[450px] bg-gray-100 rounded-3xl flex flex-col items-start justify-between p-4">
+                <div key={index} className=" w-[450px] bg-gray-100 rounded-3xl flex flex-col items-start justify-between p-4">
                   <Image
                     className="rounded-3xl w-full h-72 object-cover"
                     src={doctor.image}
