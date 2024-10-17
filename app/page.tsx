@@ -1,101 +1,118 @@
 import Image from "next/image";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import heroImage from "./hero.jpg";
+import VijayaLakshmi from "./vijayalakshmi.jpeg";
+import Madhav from "./madhav.jpeg";
 
 export default function Home() {
+  const metrics = [
+    {
+      title: "100%",
+      description: "Satisfaction rate",
+    },
+    {
+      title: "10+",
+      description: "Years of experience",
+    },
+    {
+      title: "1000+",
+      description: "Happy patients",
+    },
+    {
+      title: "10+",
+      description: "Expert doctors",
+    },
+  ];
+
+  const doctors = [
+    {
+      name: "Dr. Vijaya Lakshmi",
+      qualification: "M.B.B.S., D.N.B. (OBG)",
+      specialization: "Obstetrics and Gynecology",
+      expertise: [
+        "General Checkups for Women’s Health",
+        "Pregnancy and Postpartum Care",
+        "Gynecological Conditions and Surgeries",
+        "Infertility Treatments and Counseling",
+        "Prenatal and Antenatal Care, Family Planning",
+        "Minimally Invasive Gynecological Surgeries",
+        "High-Risk Pregnancy Management",
+      ],
+      image: VijayaLakshmi,
+    },
+    {
+      name: "Dr. Madhav",
+      qualification: "M.S., D.N.B. (Ortho)",
+      specialization: "FISS (Nanavati, Mumbai), FESS (South Korea)",
+      expertise: [
+        "Joint, Knee, and Sports-related Injuries",
+        "Bone and Joint Surgeries, Arthroscopy Surgeries",
+        "Ligament Repairs, Joint Replacements, Keyhole Surgeries",
+        "Treatment for Arthritis and other Bone-Related Issues",
+        "Fracture Management, Orthopedic Rehabilitation",
+      ],
+      image: Madhav,
+    }
+  ];
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <Navbar />
+      <main className="flex flex-col gap-32 items-center justify-center sm:items-center w-full">
+        <section className="mt-10 flex items-center justify-between w-[80%]">
+          <div className="w-[40%]">
+            <h1 className="text-4xl font-semibold text-center py-6 sm:text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
+            <p className="text-center sm:text-left">
+              At Sri Vijaya Lakshmi Hospital, we blend advanced technology with compassionate, personalized care. From routine check-ups to specialized treatments, your health and well-being are our priority.
+            </p>
+            <button className="bg-[#FF6B6B] text-white rounded-full px-4 py-2 mt-8">Book an Appointment</button>
+          </div>
+          <div className="w-[40%]">
+            <Image className="rounded-3xl" src={heroImage} width={800} height={500} alt="hero" />
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Metrics */}
+        <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex items-center justify-evenly">
+          {metrics.map((metric, index) => (
+            <div key={index} className="flex flex-col items-center justify-center">
+              <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
+              <p className="text-center">{metric.description}</p>
+            </div>
+          ))}
+        </section>
+        {/* Doctors */}
+        <section>
+          <h1 className="font-semibold text-4xl text-center my-10">Our Doctors</h1>
+          <div className="flex items-start gap-10 justify-center">
+            {
+              doctors.map((doctor, index) => (
+                <div className=" w-[450px] bg-gray-100 rounded-3xl flex flex-col items-start justify-between p-4">
+                  <Image
+                    className="rounded-3xl w-full h-72 object-cover"
+                    src={doctor.image}
+                    width={800}
+                    height={500}
+                    alt="hero" />
+                  <div className="text-left py-5 p-4">
+                    <h1 className=" font-semibold text-xl my-2">{doctor.name} <sub>{doctor.qualification}</sub></h1>
+                    <p className="my-4"><span className="font-semibold">Specialization: </span>{doctor.specialization}</p>
+                    <ul className=" list-disc list-inside flex flex-col gap-2">
+                      <p><span className="font-semibold">Expertise:</span></p>
+                      {
+                        doctor.expertise.map((expertise, index) => (
+                          <li key={index}>{expertise}</li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
