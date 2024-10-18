@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Metrics */}
-      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex flex-wrap items-center justify-evenly">
+      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex flex-col md:flex-row flex-wrap items-center justify-evenly">
         {metrics.map((metric, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
             <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
@@ -153,6 +153,12 @@ export default function Home() {
             ))
           }
         </div>
+      </section>
+      {/* Contact */}
+      <section className="  flex flex-col items-center justify-center">
+        <h1 className="font-semibold text-4xl my-10">Contact Us</h1>
+        <p>Email: <a href="mailto:srivijayalakshmihospital@gmail.com"> srivijayalakshmihospital@gmail.com </a></p>
+        <p>Phone: <a href="tel:+91 83318 88668"> +91 83318 88668 </a></p>
       </section>
     </>
   );
