@@ -23,4 +23,27 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .page-content{
+    h2{
+      font-size: 1.5rem;
+      color: var(--foreground);
+      margin: 12px 0px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: var(--foreground);
+      margin: 12px 0px;
+    }
+
+    ul {
+      list-style: disc;
+      list-style-position: inside;
+    }
+    
+    p{
+      padding: 8px 0px;
+    }
+  }
 }

@@ -4,8 +4,30 @@ import Footer from "./components/footer";
 import heroImage from "./hero.jpg";
 import VijayaLakshmi from "./vijayalakshmi.jpeg";
 import Madhav from "./madhav.jpeg";
+import logo from "./logo.svg";
+import generalMed from './general.svg';
+import ord from './ord.svg';
+import ped from './ped.svg';
 
 export default function Home() {
+
+  const services = [
+    {
+      title: "General Medicine",
+      description: "Our general medicine department provides comprehensive care for a wide range of medical conditions. Our experienced physicians offer personalized treatment plans to ensure your well-being.",
+      image: generalMed
+    },
+    {
+      title: "Orthopedics",
+      description: "Our orthopedic department specializes in the diagnosis and treatment of musculoskeletal conditions. Our expert doctors provide advanced care for joint, knee, and sports-related injuries.",
+      image: ord
+    },
+    {
+      title: "Pediatrics",
+      description: "Our pediatric department offers specialized care for children of all ages. Our expert doctors provide routine check-ups, vaccinations, and treatment for a wide range of pediatric conditions.",
+      image: ped
+    }
+  ];
   const metrics = [
     {
       title: "100%",
@@ -55,64 +77,85 @@ export default function Home() {
       image: Madhav,
     }
   ];
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Navbar />
-      <main className="flex flex-col gap-32 items-center justify-center sm:items-center w-full">
-        <section className="mt-10 flex items-center justify-between w-[80%]">
-          <div className="w-[40%]">
-            <h1 className="text-4xl font-semibold text-center py-6 sm:text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
-            <p className="text-center sm:text-left">
-              At Sri Vijaya Lakshmi Hospital, we blend advanced technology with compassionate, personalized care. From routine check-ups to specialized treatments, your health and well-being are our priority.
-            </p>
-            <button className="bg-[#FF6B6B] text-white rounded-full px-4 py-2 mt-8">Book an Appointment</button>
-          </div>
-          <div className="w-[40%]">
-            <Image className="rounded-3xl" src={heroImage} width={800} height={500} alt="hero" />
-          </div>
-        </section>
 
-        {/* Metrics */}
-        <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex items-center justify-evenly">
-          {metrics.map((metric, index) => (
-            <div key={index} className="flex flex-col items-center justify-center">
-              <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
-              <p className="text-center">{metric.description}</p>
-            </div>
-          ))}
-        </section>
-        {/* Doctors */}
-        <section>
-          <h1 className="font-semibold text-4xl text-center my-10">Our Doctors</h1>
-          <div className="flex items-start gap-10 justify-center">
-            {
-              doctors.map((doctor, index) => (
-                <div key={index} className=" w-[450px] bg-gray-100 rounded-3xl flex flex-col items-start justify-between p-4">
-                  <Image
-                    className="rounded-3xl w-full h-72 object-cover"
-                    src={doctor.image}
-                    width={800}
-                    height={500}
-                    alt="hero" />
-                  <div className="text-left py-5 p-4">
-                    <h1 className=" font-semibold text-xl my-2">{doctor.name} <sub>{doctor.qualification}</sub></h1>
-                    <p className="my-4"><span className="font-semibold">Specialization: </span>{doctor.specialization}</p>
-                    <ul className=" list-disc list-inside flex flex-col gap-2">
-                      <p><span className="font-semibold">Expertise:</span></p>
-                      {
-                        doctor.expertise.map((expertise, index) => (
-                          <li key={index}>{expertise}</li>
-                        ))
-                      }
-                    </ul>
-                  </div>
-                </div>
-              ))
-            }
+  return (
+    <>
+      <section className="relative h-[60vh] flex items-center justify-center">
+        <div className="flex flex-col gap-3 z-10">
+          <h1 className="text-4xl font-semibold text-center">Welcome to Sri Vijaya Lakshmi Hospital</h1>
+          <p className="text-center ">Your health is our priority. We provide compassionate care and advanced medicine to ensure your well-being.</p>
+        </div>
+        <div className=" absolute top-0 left-0 w-full h-full opacity-40">
+          <Image className="w-full h-full -z-10" src={logo} width={200} height={200} alt="logo" />
+        </div>
+      </section>
+      <section className="mt-10 flex items-center justify-between w-[80%]">
+        <div className="w-[40%]">
+          <h1 className="text-4xl font-semibold text-center py-6 sm:text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
+          <p className="text-center sm:text-left">
+            At Sri Vijaya Lakshmi Hospital, we blend advanced technology with compassionate, personalized care. From routine check-ups to specialized treatments, your health and well-being are our priority.
+          </p>
+          <button className="bg-[#FF6B6B] text-white rounded-full px-4 py-2 mt-8">Book an Appointment</button>
+        </div>
+        <div className="w-[40%]">
+          <Image className="rounded-3xl" src={heroImage} width={800} height={500} alt="hero" />
+        </div>
+      </section>
+
+      {/* Metrics */}
+      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex items-center justify-evenly">
+        {metrics.map((metric, index) => (
+          <div key={index} className="flex flex-col items-center justify-center">
+            <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
+            <p className="text-center">{metric.description}</p>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+        ))}
+      </section>
+      {/* Serivces */}
+      <section>
+        <h1 className="font-semibold text-4xl text-center my-10">Our Services</h1>
+        <div className="flex items-start gap-10 justify-center flex-wrap">
+          {
+            services.map((service, index) => (
+              <div key={index} className="p-6 rounded-2xl w-96 border">
+                <Image src={service.image} width={30} height={30} alt="hero" />
+                <h1 className="font-semibold text-2xl my-3">{service.title}</h1>
+                <p>{service.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+      {/* Doctors */}
+      <section>
+        <h1 className="font-semibold text-4xl text-center my-10">Our Doctors</h1>
+        <div className="flex items-start gap-10 justify-center">
+          {
+            doctors.map((doctor, index) => (
+              <div key={index} className=" w-[450px] rounded-3xl flex flex-col items-start justify-between p-4 border">
+                <Image
+                  className="rounded-3xl w-full h-72 object-cover"
+                  src={doctor.image}
+                  width={800}
+                  height={500}
+                  alt="hero" />
+                <div className="text-left py-5 p-4">
+                  <h1 className=" font-semibold text-xl my-2">{doctor.name} <sub>{doctor.qualification}</sub></h1>
+                  <p className="my-4"><span className="font-semibold">Specialization: </span>{doctor.specialization}</p>
+                  <ul className=" list-disc list-inside flex flex-col gap-2">
+                    <p><span className="font-semibold">Expertise:</span></p>
+                    {
+                      doctor.expertise.map((expertise, index) => (
+                        <li key={index}>{expertise}</li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </>
   );
 }
