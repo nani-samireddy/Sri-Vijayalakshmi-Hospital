@@ -78,10 +78,10 @@ export default function Home() {
 
   return (
     <>
-      <section id="hero" className="relative h-[60vh] flex items-center justify-center">
-        <div className="flex flex-col items-center justify-center gap-3 z-10">
-          <p className="text-2xl md:text-3xl lg:text-5xl font-medium text-center leading-[1.7]">Welcome to <span className="font-bold text-white bg-blue-500 p-2 rounded whitespace-nowrap">Sri Vijaya Lakshmi Hospital</span></p>
-          <p className="text-center md:text-2xl lg:text-3xl lg:w-3/5">“Your health is our priority. We provide compassionate care and advanced medicine to ensure your well-being.”</p>
+      <section id="hero" className="relative h-[50vh] pt-16 md:h-[60vh] flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center md:gap-3 z-10">
+          <p className="text-3xl md:text-3xl lg:text-5xl text-center font-bold leading-[1.7]">Welcome to <span className=" text-white bg-blue-500 p-2 rounded whitespace-nowrap">Sri Vijaya Lakshmi Hospital</span></p>
+          <p className="text-center text-2xl lg:text-3xl lg:w-3/5">“Your health is our priority. We provide compassionate care and advanced medicine to ensure your well-being.”</p>
         </div>
         <div className=" absolute top-0 left-0 w-full h-full opacity-30">
           <Image className="w-full h-full -z-10" src={logo} width={200} height={200} alt="logo" />
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row items-start gap-10 justify-center">
           {
             doctors.map((doctor, index) => (
-              <div key={index} className=" w-[450px] rounded-3xl flex flex-col items-start justify-between p-4 border">
+              <div key={index} className=" md:w-[450px] rounded-3xl flex flex-col items-start justify-between p-4 border">
                 <Image
                   className="rounded-3xl w-full h-72 object-cover"
                   src={doctor.image}
