@@ -78,30 +78,30 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative h-[60vh] flex items-center justify-center">
-        <div className="flex flex-col gap-3 z-10">
-          <h1 className="text-4xl font-semibold text-center">Welcome to Sri Vijaya Lakshmi Hospital</h1>
-          <p className="text-center ">Your health is our priority. We provide compassionate care and advanced medicine to ensure your well-being.</p>
+      <section id="hero" className="relative h-[60vh] flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center gap-3 z-10">
+          <p className="text-2xl md:text-3xl lg:text-5xl font-medium text-center leading-[1.7]">Welcome to <span className="font-bold text-white bg-blue-500 p-2 rounded whitespace-nowrap">Sri Vijaya Lakshmi Hospital</span></p>
+          <p className="text-center md:text-2xl lg:text-3xl lg:w-3/5">“Your health is our priority. We provide compassionate care and advanced medicine to ensure your well-being.”</p>
         </div>
-        <div className=" absolute top-0 left-0 w-full h-full opacity-40">
+        <div className=" absolute top-0 left-0 w-full h-full opacity-30">
           <Image className="w-full h-full -z-10" src={logo} width={200} height={200} alt="logo" />
         </div>
       </section>
-      <section className="mt-10 flex flex-col md:flex-row items-center justify-between w-[80%]">
-        <div className="w-[40%]">
-          <h1 className="text-4xl font-semibold text-center py-6 sm:text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
-          <p className="text-center sm:text-left">
+      <section className="mt-10 flex flex-col-reverse md:flex-row items-center justify-between w-[80%]">
+        <div className="w-full text-left md:w-[40%]">
+          <h1 className="text-4xl font-semibold py-6 text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
+          <p className="text-left">
             At Sri Vijaya Lakshmi Hospital, we blend advanced technology with compassionate, personalized care. From routine check-ups to specialized treatments, your health and well-being are our priority.
           </p>
-          <button className="bg-[#FF6B6B] text-white rounded-full px-4 py-2 mt-8">Book an Appointment</button>
+          <button className="bg-[#FF6B6B] text-white rounded-full px-[26px] py-[14px] mt-8">Book an Appointment</button>
         </div>
-        <div className="w-[40%]">
+        <div className="w-full md:w-[40%]">
           <Image className="rounded-3xl" src={heroImage} width={800} height={500} alt="hero" />
         </div>
       </section>
 
       {/* Metrics */}
-      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex flex-col md:flex-row flex-wrap items-center justify-evenly">
+      <section className="py-10 mg:py-20 rounded-3xl bg-[#fafafa] w-full flex flex-row flex-wrap items-center justify-evenly gap-y-10">
         {metrics.map((metric, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
             <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
@@ -110,7 +110,7 @@ export default function Home() {
         ))}
       </section>
       {/* Serivces */}
-      <section>
+      <section id="services">
         <h1 className="font-semibold text-4xl text-center my-10">Our Services</h1>
         <div className="flex flex-col md:flex-row items-start gap-10 justify-center flex-wrap">
           {
@@ -125,9 +125,9 @@ export default function Home() {
         </div>
       </section>
       {/* Doctors */}
-      <section>
+      <section id="doctors">
         <h1 className="font-semibold text-4xl text-center my-10">Our Doctors</h1>
-        <div className="flex flex-col md:flex-row items-start gap-10 justify-center">
+        <div className="flex flex-col lg:flex-row items-start gap-10 justify-center">
           {
             doctors.map((doctor, index) => (
               <div key={index} className=" w-[450px] rounded-3xl flex flex-col items-start justify-between p-4 border">
@@ -138,7 +138,7 @@ export default function Home() {
                   height={500}
                   alt="hero" />
                 <div className="text-left py-5 p-4">
-                  <h1 className=" font-semibold text-xl my-2">{doctor.name} <sub>{doctor.qualification}</sub></h1>
+                  <h1 className=" font-semibold text-xl my-2">{doctor.name} <sub className="font-light">{doctor.qualification}</sub></h1>
                   <p className="my-4"><span className="font-semibold">Specialization: </span>{doctor.specialization}</p>
                   <ul className=" list-disc list-inside flex flex-col gap-2">
                     <p><span className="font-semibold">Expertise:</span></p>
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
       </section>
       {/* Contact */}
-      <section className="  flex flex-col items-center justify-center">
+      <section className="  flex flex-col items-center justify-center" id="contact">
         <h1 className="font-semibold text-4xl my-10">Contact Us</h1>
         <p>Email: <a href="mailto:srivijayalakshmihospital@gmail.com"> srivijayalakshmihospital@gmail.com </a></p>
         <p>Phone: <a href="tel:+91 83318 88668"> +91 83318 88668 </a></p>
