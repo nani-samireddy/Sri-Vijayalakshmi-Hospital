@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className='flex w-full justify-between'>
         <div className='flex items-center justify-center gap-2'>
         <Image src={logo} alt="logo" className="h-14 w-14"/>
-        <span className='font-medium text-xl'>Sri Vijaya Lakshmi Hospital</span>
+        <span className='font-medium text-xl hidden md:block'>Sri Vijaya Lakshmi Hospital</span>
         </div>
         <div className='flex gap-8 items-center justify-center'>
             <Link href="/"><span>Home</span></Link>

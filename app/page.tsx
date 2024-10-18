@@ -87,7 +87,7 @@ export default function Home() {
           <Image className="w-full h-full -z-10" src={logo} width={200} height={200} alt="logo" />
         </div>
       </section>
-      <section className="mt-10 flex items-center justify-between w-[80%]">
+      <section className="mt-10 flex flex-col md:flex-row items-center justify-between w-[80%]">
         <div className="w-[40%]">
           <h1 className="text-4xl font-semibold text-center py-6 sm:text-left leading-[1.4]">Compassionate Care, Advanced Medicine</h1>
           <p className="text-center sm:text-left">
@@ -101,7 +101,7 @@ export default function Home() {
       </section>
 
       {/* Metrics */}
-      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex items-center justify-evenly">
+      <section className="py-20 rounded-3xl bg-[#fafafa] w-full flex flex-wrap items-center justify-evenly">
         {metrics.map((metric, index) => (
           <div key={index} className="flex flex-col items-center justify-center">
             <h1 className="text-4xl font-semibold text-[#1c274c]">{metric.title}</h1>
@@ -112,7 +112,7 @@ export default function Home() {
       {/* Serivces */}
       <section>
         <h1 className="font-semibold text-4xl text-center my-10">Our Services</h1>
-        <div className="flex items-start gap-10 justify-center flex-wrap">
+        <div className="flex flex-col md:flex-row items-start gap-10 justify-center flex-wrap">
           {
             services.map((service, index) => (
               <div key={index} className="p-6 rounded-2xl w-96 border">
@@ -127,7 +127,7 @@ export default function Home() {
       {/* Doctors */}
       <section>
         <h1 className="font-semibold text-4xl text-center my-10">Our Doctors</h1>
-        <div className="flex items-start gap-10 justify-center">
+        <div className="flex flex-col md:flex-row items-start gap-10 justify-center">
           {
             doctors.map((doctor, index) => (
               <div key={index} className=" w-[450px] rounded-3xl flex flex-col items-start justify-between p-4 border">
