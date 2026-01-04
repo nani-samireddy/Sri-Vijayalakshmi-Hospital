@@ -12,6 +12,7 @@ export default function Navbar() {
             <Link href="/"><span>Home</span></Link>
             <Link href="/#services"><span>Services</span></Link>
             <Link href="/#doctors"><span>Doctors</span></Link>
+            <Link href="/ratna-medicals"><span>Pharmacy</span></Link>
             <Link href="/#contact" className='bg-blue-800 px-6 py-2 rounded-full text-white'><span>Contact</span></Link>
         </div>
     </div>
